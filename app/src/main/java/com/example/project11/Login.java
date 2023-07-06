@@ -17,7 +17,6 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
     }
-
     public void to_mainActivity(View dsp) {
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);

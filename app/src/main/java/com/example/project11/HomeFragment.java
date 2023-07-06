@@ -1,5 +1,6 @@
 package com.example.project11;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -67,9 +69,20 @@ public class HomeFragment extends Fragment {
 
 
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        ImageView bb3 = view.findViewById(R.id.bb3);
+        bb3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), Cart.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerViewList = view.findViewById(R.id.view);
 
@@ -106,6 +119,8 @@ public class HomeFragment extends Fragment {
         }
 
         return view;
+
+
     }
     public void showimage(int img){
         ImageView imageview = new ImageView(getContext());
